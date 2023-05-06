@@ -30,7 +30,7 @@ Anonymize messages so that the identity of the original poster is hidden
 Parse a classlist and store it in an SQL database
 
 
-### Reset User Authorization
+#### Reset User Authorization
 For every user in the server, remove authorization related discord roles and re-assign them based on current database
 
 
