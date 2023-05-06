@@ -1,0 +1,14 @@
+import smtplib
+
+def initialize():
+	server = smtplib.SMTP("smtp.office365.com", 587)
+	server.starttls()
+	server.login("seadiscordbot@outlook.com", open("PASSWORD").read())
+
+def send_message(address, message):
+	server.sendmail("seadiscordbot@outlook.com", address, message)
+
+	server.quit()
+
+print("Email sent!")
+
