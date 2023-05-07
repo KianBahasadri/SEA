@@ -10,7 +10,7 @@ Authenticate and authorize new users as they join the server by email verificati
 
 When a user joins the discord server, they will be automatically placed in a waiting channel, and will be instructed (not by the bot) to prompt the bot to verify them.
 
-Once prompted, the bot will ask the user for their school email "xxxx@university.com" and send a verification code to that email address.
+Once prompted, the bot will ask the user for their school email e.g. "xxxx@university.com" and send a verification code to that email address.
 
 The bot will then ask the user to send the verification code, and once the bot verifies that it is correct the user is now Authenticated.
 
