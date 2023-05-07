@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 import smtplib
 
 def send_code(address, message):
@@ -35,6 +36,8 @@ async def on_message(message):
 		return
 	
 	await message.channel.send(f"hello {username}!")
+
+
 
 client.run(TOKEN)
 
