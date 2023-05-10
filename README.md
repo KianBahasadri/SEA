@@ -30,10 +30,9 @@ For every user in the server, remove authorization related discord roles and re-
 
 ## Documentation
 
-- **config.json** holds secrets such as the token.  
-- **index.js** contains the code that operates the bot.  
-- **package.json** & **package-lock.json** are npm generated files that stores information about this project such as dependencies and package versions. If you run `npm install` these files will be used to install and configure your local environment.  
-- **commands/** holds the code for slash commands. They are organized in subdirectories, do not put command files directly inside as it will cause errors.  
-- **deploy-commands.js** deploys each slash command and its description to discord. When slash commands are used, discord notifies your bot. These requests are rate limited by discord so use them sparingly.  
-- **events/** holds the code for events such as logging in or recieving a message. It works like commands/ but has no subdirectories.  
-
+- **config.json** holds secrets such as the token.
+- **index.js** contains the code that operates the bot.
+- **package.json** & **package-lock.json** are npm generated files that stores information about this project such as dependencies and package versions. If you run `npm install` these files will be used to install and configure your local environment.
+- **commands/** holds the code for slash commands. They are organized in subdirectories, do not put command files directly inside as it will cause errors.
+- **deploy-commands.js** deploys each slash command and its description to discord. When slash commands are used, discord notifies your bot. These requests are rate limited by discord so use them sparingly.
+- **events/** holds the code for events such as logging in or recieving a message. It works like commands/ but has no subdirectories.
