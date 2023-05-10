@@ -1,9 +1,9 @@
 # SEA_discord
 This is a discord bot that adds security to the SEA discord server
 
+**CURRENTLY NOT FUNCTIONAL**
 
 ## End-User Functionality
-
 
 #### User Authentication and Authorization
 Authenticate and authorize new users as they join the server by email verification and classlist cross-reference.
@@ -21,18 +21,19 @@ The bot assigns the appropriate discord roles and adds the discord account to th
 
 ## Admin Functionality
 
-
 #### Classlist parser
 Parse a classlist and store it in an SQL database
-
 
 #### Reset User Authorization
 For every user in the server, remove authorization related discord roles and re-assign them based on current database
 
 
-## TODO
+## Documentation
 
+**config.json** is a json file that holds secrets such as the token
+**index.js** is the js file that contains the code that operates the bot
+**package.json** & **package-lock.json** is an npm generated file that stores information about this project such as dependencies and package versions. If you run `npm install` node will use these files to install and configure your local envirnment
+**commands/** is a directory which holds the code for slash commands. They are organized in subdirectories, do not put command files directly in commands/ as it will cause errors.
+**deploy-commands.js** deploys each slash command and its description to discord. When slash commands are used, discord notifies your bot. These requests are rate limited by discord so use them sparingly.
+**events/** holds the code for events such as logging in or recieving a message. It works like commands/ but has no subdirectories
 
-- user authentication
-- classlist parser
-- write documentation
