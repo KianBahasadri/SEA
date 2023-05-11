@@ -28,17 +28,17 @@ I did my best to give an overview of this project and go into detail on specific
 #### Directory Structure
 This is what the directory structure should look like in production:
 
-SEA_discord/
-├── commands/
-├── config.json
-├── events/
-├── index.js
-├── node_modules/
-├── package.json
-├── package-lock.json
-├── README.md
-├── student_info.db
-└── utils/
+SEA_discord/  
+├── commands/  
+├── config.json  
+├── events/  
+├── index.js  
+├── node_modules/  
+├── package.json  
+├── package-lock.json  
+├── README.md  
+├── student_info.db  
+└── utils/  
 
 
 - **commands/** hold the code for slash commands in subdirectories. Imported in index.js
@@ -52,11 +52,9 @@ SEA_discord/
 The following is the structure of **student_info.db**
 
 Students  
-+----+----------+----------+  
-| id | fistname | lastname |  
-+----+----------+----------+  
-|  1 | John     | Doe      |  
-+----+----------+----------+  
+| id | firstname | lastname |
+|----|-----------|----------|
+|  1 | John      | Doe      |
 
 Enrollment  
 +------------+-----------+------+----------+  
@@ -77,11 +75,11 @@ Courses
 
 
 #### utils/
-utils/
-├── addRoles.js
-├── checkEmailForCode.js
-├── classlist_parser.py
-└── deploy-commands.js
+utils/  
+├── addRoles.js  
+├── checkEmailForCode.js  
+├── classlist_parser.py  
+└── deploy-commands.js  
 
 - **classlist_parser.py** super hacky parser for the classlist. Details are inside.
 - **deploy-commands.js** deploys each slash command and its description to discord. When slash commands are used, discord notifies your bot. These requests are rate limited by discord so use them sparingly.
