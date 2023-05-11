@@ -3,9 +3,9 @@ This is a discord bot that adds security to the SEA discord server
 
 **CURRENTLY NOT FUNCTIONAL**
 
-## End-User Functionality
+## End-User Uses
 
-#### Using `/verify_email` and `/verify_code` for Authentication and Authorization
+#### Authentication and Authorization using `/verify_email` and `/verify_code`
 Note: The /verify commands should be used in a designated verification channel. The intention is that users will have no privileged channel access until the verification process is complete.
 
 `/verify_email` has one required option, which is the user's school email adddress e.g. "xxxx@university.com". Once this command is sent, a verification code will be sent to that user's email address.
@@ -13,7 +13,7 @@ Note: The /verify commands should be used in a designated verification channel. 
 `/verify_code` has one required option, which is the verification code sent to the user's school email address. Once this command is sent and approved, the bot will automatically assign the user's roles.
 
 
-## Admin Functionality
+## Admin Uses
 
 #### Classlist parser
 The script
