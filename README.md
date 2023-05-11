@@ -1,5 +1,6 @@
 # SEA_discord
 This is a discord bot that adds security to the SEA discord server. this bot is CURRENTLY NOT FUNCTIONAL.
+After much struggling, I decided to write out the entire documentation for this project before I start building it. This way, the planning stage and documentation stage are combined together.
 
 ## End-User Uses
 
@@ -25,8 +26,8 @@ For every user in the server, remove authorization related discord roles and re-
 I did my best to give an overview of this project and go into detail on specific parts.
 
 
-#### Directory Structure
-This is what the directory structure should look like in production:
+#### Main Directory Structure
+This is what the main directory should look like in production:
 
 SEA_discord/  
 ├── commands/  
@@ -48,13 +49,44 @@ SEA_discord/
 - **student_info.db** holds the student enrollment information
 
 
+#### Technical Explanation of `/verify_email` and `/verify_code`
+
+When `/verify_email` is called, index.js runs a function it imported from *commands/users/verify_email.js*.
+This function logically looks like this:  
+```
+import imap
+import verificationCodes dictionary from utils/
+generate secret code
+send secret code to email address
+Create entry in verificationCodes, key = userid, value = secret code
+```
+when `/verify_code` is called, it looks like this:  
+```
+import verificationCodes dictionary from utils/
+import addRoles function from untils/
+secretCode = verificationCodes[userid]
+if commandOption == secretCode:
+  reply: success
+  run addRoles(emailaddress, discordtag)
+else:
+  reply: failed
+```
+
+When `addRoles.js` is called, it looks like this:
+```
+import sql
+perform the following on student_info.db
+select * from students where email="emailaddress"
+```
+
 #### Student_info.db
-The following is the structure of **student_info.db**
+The following is the structure of the tables in **student_info.db**
 
 Students  
-| id | firstname | lastname |
-|----|-----------|----------|
-|  1 | John      | Doe      |
+| id | firstname | lastname |      email      | verified |   discord    |
+|----|-----------|----------|-----------------|----------|--------------|
+|  1 | John      | Doe      | johndoe@uni.com | True     | johndoe#0000 |
+|  2 | Jane      | Doe      | janedoe@uni.com | False    | NULL         |
 
 Enrollment  
 | student-id | course-id | year | semester |
