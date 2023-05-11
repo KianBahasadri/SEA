@@ -1,11 +1,14 @@
-const fs = require('node:fs');
-const path = require('node:path');
+const fs = require('node:fs'); // filesystem
+const path = require('node:path'); // file path
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
+// client object serves as main interface for interacting with discord
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
+
+//----------- commands -----------
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -22,7 +25,10 @@ for (const folder of commandFolders) {
 		}
 	}
 }
+//---------------------------------
 
+
+//------------ events -------------
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
@@ -35,5 +41,7 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
+//---------------------------------
+
 
 client.login(token);
