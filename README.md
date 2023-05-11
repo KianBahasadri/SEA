@@ -1,7 +1,5 @@
 # SEA_discord
-This is a discord bot that adds security to the SEA discord server
-
-**CURRENTLY NOT FUNCTIONAL**
+This is a discord bot that adds security to the SEA discord server. this bot is CURRENTLY NOT FUNCTIONAL.
 
 ## End-User Uses
 
@@ -54,27 +52,27 @@ SEA_discord/
 The following is the structure of **student_info.db**
 
 Students
-+----+----------+----------+
-| id | fistname | lastname |
-+----+----------+----------+
-|  1 | John     | Doe      |
-+----+----------+----------+
++----+----------+----------+  
+| id | fistname | lastname |  
++----+----------+----------+  
+|  1 | John     | Doe      |  
++----+----------+----------+  
 
 Enrollment
-+------------+-----------+------+----------+
-| student-id | course-id | year | semester |
-+------------+-----------+------+----------+
-|          1 |         1 | 2022 |        1 |
-|          1 |         2 | 2022 |        2 |
-+------------+-----------+------+----------+
++------------+-----------+------+----------+  
+| student-id | course-id | year | semester |  
++------------+-----------+------+----------+  
+|          1 |         1 | 2022 |        1 |  
+|          1 |         2 | 2022 |        2 |  
++------------+-----------+------+----------+  
 
 Courses
-+----+---------+
-| id |  name   |
-+----+---------+
-|  1 | math100 |
-|  2 | chem100 |
-+----+---------+
++----+---------+  
+| id |  name   |  
++----+---------+  
+|  1 | math100 |  
+|  2 | chem100 |  
++----+---------+  
 
 
 
