@@ -51,14 +51,14 @@ SEA_discord/
 #### Student_info.db
 The following is the structure of **student_info.db**
 
-Students
+Students  
 +----+----------+----------+  
 | id | fistname | lastname |  
 +----+----------+----------+  
 |  1 | John     | Doe      |  
 +----+----------+----------+  
 
-Enrollment
+Enrollment  
 +------------+-----------+------+----------+  
 | student-id | course-id | year | semester |  
 +------------+-----------+------+----------+  
@@ -66,7 +66,7 @@ Enrollment
 |          1 |         2 | 2022 |        2 |  
 +------------+-----------+------+----------+  
 
-Courses
+Courses  
 +----+---------+  
 | id |  name   |  
 +----+---------+  
