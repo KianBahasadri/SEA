@@ -44,17 +44,20 @@ SEA_discord/
 ├── student_info.db  
 └── utils/  
 
+- **commands/**: .js files for slash commands held in subdirectories. Imported in index.js
+- **config.json**: secrets such as the token and email credentials.
+- **events/**: .js files for discord events such as logging in or recieving a message. Imported in index.js
+- **index.js**: the code responsible for operating the bot. Imports the code from around the project.
+- **student_info.db**: sqlite db of the student enrollment information
+- **utils/**: helper scripts
 
-- **commands/** hold the code for slash commands in subdirectories. Imported in index.js
-- **config.json** holds secrets such as the token and email credentials.
-- **events/** holds the code for discord events such as logging in or recieving a message. Imported in index.js
-- **index.js** responsible for operating the bot. Imports the code from around the project.
-- **student_info.db** holds the student enrollment information
 
+
+#### index.js
+When index.js is run, it imports functions from *commands/* and *events/*. It 
 
 #### Technical Explanation of `/verify_email` and `/verify_code`
-
-When `/verify_email` is called, index.js runs a function it imported from *commands/users/verify_email.js*.
+listeners When `/verify_email` is called, index.js runs a function it imported from *commands/users/verify_email.js*.
 This function logically looks like this:  
 ```
 import imap
