@@ -1,10 +1,14 @@
 # SEA_discord
-This is a discord bot that adds security to the SEA discord server. this bot is CURRENTLY NOT FUNCTIONAL.
-After much struggling, I decided to write out the entire documentation for this project before I start building it. This way, the planning stage and documentation stage are combined together.
+This is a discord bot project that adds security to the SEA discord server. This project is CURRENTLY NOT FUNCTIONAL.
 
-## End-User Uses
+The sections talking about the Functions are non-technical and explain the purpose of the project.  
+The section talking about Documentation is a technical coverage of the inner workings of this project.
 
-#### Authentication and Authorization using `/verify_email` and `/verify_code`
+## End-User Functions
+
+#### Authentication and Authorization
+Users can self-verify using the commands `/verify_email` and `/verify_code`.
+
 Note: The /verify commands should be used in a designated verification channel. The intention is that users will have no privileged channel access until the verification process is complete.
 
 `/verify_email` has one required option, which is the user's school email adddress e.g. "xxxx@university.com". Once this command is sent, a verification code will be sent to that user's email address.
@@ -12,14 +16,13 @@ Note: The /verify commands should be used in a designated verification channel. 
 `/verify_code` has one required option, which is the verification code sent to the user's school email address. Once this command is sent and approved, the bot will automatically assign the user's roles.
 
 
-## Admin Uses
+## Administrative Functions
 
 #### Classlist parser
-The script
-Parse a classlist and store it in an SQL database
+The script classlist_parser.py can parse a classlist and will store it in **student_info.db**. The script is made with python stored on the server-side, inaccessible through the bot. More details in the documentation section.
 
 #### Reset User Authorization
-For every user in the server, remove authorization related discord roles and re-assign them based on current database
+For either a single user or for every user in the server, remove authorization related discord roles and re-assign them based on the current info in **student_info.db**. This will ideally be used at the start of every semester. Furthermore, if data is changed in **student_info.db**, this can be used to ensure every student is given the proper access.
 
 
 ## Documentation
@@ -27,7 +30,7 @@ I did my best to give an overview of this project and go into detail on specific
 
 
 #### Main Directory Structure
-This is what the main directory should look like in production:
+This is what the main directory should look like:
 
 SEA_discord/  
 ├── commands/  
@@ -43,7 +46,7 @@ SEA_discord/
 
 
 - **commands/** hold the code for slash commands in subdirectories. Imported in index.js
-- **config.json** holds secrets such as the token.
+- **config.json** holds secrets such as the token and email credentials.
 - **events/** holds the code for discord events such as logging in or recieving a message. Imported in index.js
 - **index.js** responsible for operating the bot. Imports the code from around the project.
 - **student_info.db** holds the student enrollment information
